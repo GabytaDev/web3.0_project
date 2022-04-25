@@ -1,31 +1,34 @@
 @import "../basics-styles";
 
-.content-welcome{
+.content-welcome {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    .content-inner{
+    .content-inner {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
         padding: 3rem 1rem;
-        .content-title{
+
+        .content-title {
             display: flex;
             flex-shrink: 1;
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
             margin-right: 2.5rem;
-            .title-welcome{
+
+            .title-welcome {
                 color: #ffff;
                 font-size: 1.875rem;
                 line-height: 2.25rem;
                 padding: 0.25rem 0;
                 @include text-gradient;
             }
-            .subtitle-welcome{
+
+            .subtitle-welcome {
                 color: #ffff;
                 text-align: left;
                 margin-top: 1.25rem;
@@ -33,16 +36,99 @@
                 width: 91.666667%;
                 font-size: 1rem;
             }
+
+            .button-conect-wallet {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1.25rem 0;
+                background-color: #2952e3;
+                padding: 0.75rem;
+                border: none;
+                border-radius: 9999px;
+                cursor: pointer;
+                .text-button-conect {
+                    color: #ffff;
+                    font-weight: 600;
+                }
+            }
+
+            .button-conect-wallet:hover {
+                background-color: #2546bd;
+            }
+            .content-grid {
+                display: grid;
+                margin-top: 10px;
+                width: 100%;
+                grid-template-columns: auto auto;
+                color: #ffff;             
+            }
+            .content-grid>div {
+                border: 1px solid #ffff;
+                text-align: center;
+                font-weight: lighter;
+                padding: 10px;
+            }
+        }
+    }
+    .content-inner-right{
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1;
+        align-items: center;
+        justify-content: flex-start;
+        width: 18rem;
+        margin-top: 2.5rem;
+        .content-card{
+            padding: 0.75rem;
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+            flex-direction: column;
+            border-radius: 0.75rem; 
+            height: 10rem;
+            width: 100%;
+            margin: 1.25rem 0;
+            @include white-glassmorphism;
+            @include eth-card;
+            .content-inner-card{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                .content-item{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    .content-icon{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: 50%;
+                        border: 1px solid #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .icon-ethereum{
+                            color: #fff;
+                            font-size: 21px;
+                        }
+                    }  
+                }
+            }
+            
+           
         }
     }
 }
 
-@media (min-width:768px) and (max-width:1023px){
-    .content-welcome{
-        .content-inner{
+@media (min-width:768px) and (max-width:1023px) {
+    .content-welcome {
+        .content-inner {
             flex-direction: row;
             padding: 5rem;
-            .subtitle-welcome{
+
+            .subtitle-welcome {
                 width: 75%;
             }
         }
@@ -50,17 +136,18 @@
 }
 
 @media (min-width:320px) and (max-width:767px) {
-    .content-welcome{
-        .content-inner{
+    .content-welcome {
+        .content-inner {
             flex-direction: row;
             padding: 5rem;
-            .content-title{
-                .title-welcome{
+
+            .content-title {
+                .title-welcome {
                     font-size: 3rem;
                     line-height: 1;
                 }
             }
-           
+
         }
     }
 }

@@ -1,0 +1,66 @@
+@import "../basics-styles";
+
+.content-welcome{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .content-inner{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 3rem 1rem;
+        .content-title{
+            display: flex;
+            flex-shrink: 1;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-right: 2.5rem;
+            .title-welcome{
+                color: #ffff;
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+                padding: 0.25rem 0;
+                @include text-gradient;
+            }
+            .subtitle-welcome{
+                color: #ffff;
+                text-align: left;
+                margin-top: 1.25rem;
+                font-weight: 300;
+                width: 91.666667%;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px){
+    .content-welcome{
+        .content-inner{
+            flex-direction: row;
+            padding: 5rem;
+            .subtitle-welcome{
+                width: 75%;
+            }
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    .content-welcome{
+        .content-inner{
+            flex-direction: row;
+            padding: 5rem;
+            .content-title{
+                .title-welcome{
+                    font-size: 3rem;
+                    line-height: 1;
+                }
+            }
+           
+        }
+    }
+}

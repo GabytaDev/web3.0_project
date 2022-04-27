@@ -68,7 +68,7 @@ const Welcome = () => {
                     <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}}/>
                     <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}}/>
                     <div className="divider-line"></div>
-                    {true 
+                    {false 
                     ?
                     <Loader/>
                     : (

@@ -20,6 +20,10 @@ const Welcome = () => {
     const connectWallet = () => {
 
     }
+
+    const handleSubmit = ()=>{
+        
+    }
     return (
         <div className="content-welcome">
             <div className="content-inner">
@@ -63,6 +67,18 @@ const Welcome = () => {
                     <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}}/>
                     <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}}/>
                     <div className="divider-line"></div>
+                    {false 
+                    ?
+                    <Loader/>
+                    : (
+                        <button
+                          type="button"
+                          onClick={handleSubmit}
+                          className="button-send"
+                        >
+                          Send now
+                        </button>
+                      )}
                 </div>
             </div>
 

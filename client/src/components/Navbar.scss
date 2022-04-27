@@ -18,7 +18,7 @@
         }
     }
     .items{
-        color: #ffff;
+        color: #fff;
         list-style: none;
         flex-direction: row;
         justify-content: space-between;
@@ -44,7 +44,7 @@
         position: relative;
         .icons-menu-mobile{
             font-size: 28px;
-            color: #ffff;
+            color: #fff;
             cursor: pointer;
         }
         .navbar-item-menu{
@@ -69,7 +69,7 @@
             position: relative;
             .icons-menu-mobile{
                 font-size: 28px;
-                color: #ffff;
+                color: #fff;
                 cursor: pointer;
             }
             .navbar-item-menu{
@@ -95,7 +95,7 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 justify-items: flex-end;
-                color: #ffff;
+                color: #fff;
                 @include blue-glassmorphism;
             }
         }

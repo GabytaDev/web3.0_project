@@ -1,7 +1,8 @@
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
-import { Loader } from "./Loader";
+
+import Loader from "./Loader"
 import "./Welcome.scss";
 
 const Input = ({placeholder, name, type, value, handleChange })=> (
@@ -67,7 +68,7 @@ const Welcome = () => {
                     <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}}/>
                     <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}}/>
                     <div className="divider-line"></div>
-                    {false 
+                    {true 
                     ?
                     <Loader/>
                     : (

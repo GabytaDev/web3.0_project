@@ -32,13 +32,16 @@ const Welcome = () => {
             <div className="content-inner-right">
                 <div className="content-card">
                     <div className="content-inner-card">
-                        <div className="content-item"> 
-                        <div className="content-icon">
-                        <SiEthereum className="icon-ethereum" />
+                        <div className="content-item">
+                            <div className="content-icon">
+                                <SiEthereum className="icon-ethereum" />
+                            </div>
+                            <BsInfoCircle className="icon-info"/>
                         </div>
-                        
+                        <div>
+                            <p className="address-card">Address</p>
+                            <p className="text-card">Etehereum</p>
                         </div>
-                       
                     </div>
 
                 </div>

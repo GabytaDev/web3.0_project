@@ -4,6 +4,18 @@ import { BsInfoCircle } from "react-icons/bs";
 import { Loader } from "./Loader";
 import "./Welcome.scss";
 
+const Input = ({placeholder, name, type, value, handleChange })=> (
+    <input
+        placeholder={placeholder}
+        name = {name}
+        type = {type}
+        step = "0.0001"
+        value = {value}
+        onChange = {(e)=>{handleChange(e,name)}}
+        className = "class-input-form"
+    />
+);
+
 const Welcome = () => {
     const connectWallet = () => {
 
@@ -43,7 +55,14 @@ const Welcome = () => {
                             <p className="text-card">Etehereum</p>
                         </div>
                     </div>
+                </div>
 
+                <div className="content-form">
+                    <Input placeholder="Address To" name="addressTo" type="text" handleChange={()=>{}}/>
+                    <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={()=>{}}/>
+                    <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}}/>
+                    <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}}/>
+                    <div className="divider-line"></div>
                 </div>
             </div>
 

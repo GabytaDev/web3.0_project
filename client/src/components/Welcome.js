@@ -1,7 +1,9 @@
+import React, {useContext, useState} from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
+import { TransactionContext } from "../context/TransactionsContext";
 import Loader from "./Loader"
 import "./Welcome.scss";
 
@@ -18,9 +20,9 @@ const Input = ({placeholder, name, type, value, handleChange })=> (
 );
 
 const Welcome = () => {
-    const connectWallet = () => {
+    const {connectWallet, currentAccount} = useContext(TransactionContext);
+     
 
-    }
 
     const handleSubmit = ()=>{
         
@@ -31,10 +33,12 @@ const Welcome = () => {
                 <div className="content-title">
                     <h1 className="title-welcome">Send Crypto <br /> across the world</h1>
                     <p className="subtitle-welcome">Explore the crypto world. Buy and sell cryptocurrencies easily on Krypto.</p>
-                    <button type="button" onClick={connectWallet}
+                   {!currentAccount&&
+                    (<button type="button" onClick={connectWallet}
                         className="button-conect-wallet">
                         <p className="text-button-conect">Connect Wallet</p>
-                    </button>
+                    </button>)}
+                    
                     <div className="content-grid">
                         <div >Reliability</div>
                         <div >Security</div>

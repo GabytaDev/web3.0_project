@@ -20,12 +20,18 @@ const Input = ({placeholder, name, type, value, handleChange })=> (
 );
 
 const Welcome = () => {
-    const {connectWallet, currentAccount} = useContext(TransactionContext);
+    const {connectWallet, currentAccount,formData, sendTransaction, handleChange} = useContext(TransactionContext);
      
 
 
     const handleSubmit = ()=>{
-        
+      const {addressTo, amount, keyword, message} = formData;
+      e.preventDefault();  
+      if(!addressTo || !amount || !keyword || !message) return;
+      //no retorna nada
+
+      sendTransaction();
+
     }
     return (
         <div className="content-welcome">
@@ -67,10 +73,10 @@ const Welcome = () => {
                 </div>
 
                 <div className="content-form">
-                    <Input placeholder="Address To" name="addressTo" type="text" handleChange={()=>{}}/>
-                    <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={()=>{}}/>
-                    <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}}/>
-                    <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}}/>
+                    <Input placeholder="Address To" name="addressTo" type="text" handleChange={handleChange}/>
+                    <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange}/>
+                    <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={handleChange}/>
+                    <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange}/>
                     <div className="divider-line"></div>
                     {false 
                     ?

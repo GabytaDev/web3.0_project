@@ -24,7 +24,7 @@ const Welcome = () => {
      
 
 
-    const handleSubmit = ()=>{
+    const handleSubmit = (e)=>{
       const {addressTo, amount, keyword, message} = formData;
       e.preventDefault();  
       if(!addressTo || !amount || !keyword || !message) return;

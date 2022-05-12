@@ -1,10 +1,8 @@
 @import "../basics-styles";
 
 .content-welcome {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    @include center;
+    width: 100%; 
     .content-inner {
         display: flex;
         flex-direction: column;
@@ -38,9 +36,7 @@
             }
 
             .button-conect-wallet {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include center;
                 margin: 1.25rem 0;
                 background-color: #2952e3;
                 padding: 0.5rem 1.75rem;
@@ -106,9 +102,7 @@
                         height: 2.5rem;
                         border-radius: 50%;
                         border: 1px solid #fff;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        @include center;
                         .icon-ethereum{
                             color: #fff;
                             font-size: 21px;

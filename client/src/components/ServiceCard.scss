@@ -1,0 +1,31 @@
+@import "../basics-styles";
+.content-cards{ 
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    @include white-glassmorphism;
+    .content-icon{
+        width: 2.5rem;
+        height: 2.5rem ;
+        border-radius: 9999px;
+        @include center;
+    }
+    .content-text{
+        margin-left: 1.25rem; 
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        .title-card{
+            color: white;
+            margin-top: 0.5rem;
+            font-size: 1.25rem;/* 20px */
+        }
+        .subtitle-card{
+            color: white;
+            margin-top: 0.25rem; /* 4px */
+        }
+    }
+}
+

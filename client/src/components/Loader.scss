@@ -1,7 +1,7 @@
+@import "../basics-styles";
+
 .content-loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     padding: 0.75rem 0;
     .animate-spin-loader {
         animation: spin 1s linear infinite;

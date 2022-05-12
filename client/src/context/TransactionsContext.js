@@ -23,7 +23,7 @@ export const TransactionProvider = ({ children }) => {
     const [currentAccount, setCurrentAccount] = useState("");
     const [formData, setFormData] = useState({addresTo:"", amount:"", keyword:"", message:""})
     const [isLoading, setIsLoading]= useState(false);
-    //guardo el estado de la tranasccion en el local storage
+    //guardo el estado de transactionCount en el local storage
     const [transactionCount, setTransactionCount] = useState(localStorage.getItem('TransactionCount'));
 
     const handleChange = (e, name)=> {
@@ -81,21 +81,20 @@ export const TransactionProvider = ({ children }) => {
                     value: parsedAmount._hex,
 
                 }]
-            })
+            });
 
             //guardar en la blockchain
-            const transactionHash = await transactionContract.addToBlackchain(addressTo, parsedAmount, message, keyword)
+            
+            const transactionHash = await transactionContract.addToBlockchain(addressTo, parsedAmount, message, keyword)
             setIsLoading(true);
-            console.log(`Loading ${transactionHash.hash}`);
+            console.log(`Loading - ${transactionHash.hash}`);
             await transactionHash.await();
-
             setIsLoading(false);
-            console.log(`Success ${transactionHash.hash}`);
-
+            console.log(`Success - ${transactionHash.hash}`);
             const transactionCount = await transactionContract.getTransactionCount()
             //paso el estado de la transaccion a numero
-            setTransactionCount(transactionCount.toNumber())
-            
+            setTransactionCount(transactionCount.toNumber());
+             
         } catch (error) {
             console.log(error)
             throw new Error("no ethereum objet");

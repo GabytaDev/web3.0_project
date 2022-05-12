@@ -8,10 +8,8 @@
     padding: 16px;
     justify-content: space-between;
     .content-logo{
-        display: flex;
         flex-shrink: initial;
-        justify-content: center;
-        align-items:center;
+        @include center;
         .logo{
             width: 8rem;
             cursor: pointer;

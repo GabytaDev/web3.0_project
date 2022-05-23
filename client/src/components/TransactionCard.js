@@ -1,7 +1,10 @@
 import "./TransactionCard.scss";
 import { shortenAddress } from "../utils/shortenAddress";
+import useFetch from "../hooks/useFetch";
 
 const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
+   const giftUrl = useFetch({keyword});
+
     return (
         <div className="container">
             <div className="container-cards">
@@ -19,6 +22,11 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
                     <p className="text-card">Message: {message}</p>
                     </>
                     }
+                    <img 
+                    src={giftUrl || url}
+                    alt="gift"
+                    className="img-gift"
+                    />
                     <div className="content-time">
                         <p className="text-time">{timestamp}</p>
                     </div>

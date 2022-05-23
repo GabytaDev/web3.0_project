@@ -1,0 +1,50 @@
+@import "../basics-styles";
+
+.container {
+    display: flex;
+    background-color: #181918;
+    margin: 1rem;
+    /* 16px */
+    flex: 1;
+    border-radius: 0.375rem;
+
+    /* 6px */
+    .container-cards {
+        display: flex;
+        width: 100%;
+        margin-top: 0.75rem;
+
+        /* 12px */
+        .card {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            /* 24px */
+            padding: 0.5rem;
+            /* 8px */
+            .text-card{ 
+                text-decoration: none;
+                color: white;
+                font-size: 1rem; /* 16px */
+               
+            }
+            //bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl
+            .content-time{
+                background-color: rgb(0 0 0);
+                padding: 0.75rem 1,25rem; /* 12px */
+                width: 100%;
+                border-radius: 1.5rem; /* 24px */
+                margin-top: 1.25rem; /* 20px */
+                box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+                text-align: center;
+                .text-time{
+                    color:#c5ebef ;
+                   font-size: 18px;
+                }
+               
+            }
+        }
+
+
+    }
+
+}

@@ -6,13 +6,12 @@
     @include gradient-bg-services;
     .content-inner{ 
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: space-between;
         padding: 3rem;
         .content-text{
             display: flex;
-            flex: 1 ;
+            
             flex-direction: column;
            
             .title-services{
@@ -29,7 +28,7 @@
             }
         }
 
-        .content-services-card{
+        .content-service-card{
             display: flex;
             flex-direction: column;
             align-items: center;

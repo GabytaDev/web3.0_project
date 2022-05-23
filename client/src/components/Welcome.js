@@ -4,8 +4,9 @@ import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
 import { TransactionContext } from "../context/TransactionsContext";
-import Loader from "./Loader"
+import Loader from "./Loader";
 import "./Welcome.scss";
+import {shortenAddress} from "../utils/shortenAddress";
 
 const Input = ({placeholder, name, type, value, handleChange })=> (
     <input
@@ -22,8 +23,6 @@ const Input = ({placeholder, name, type, value, handleChange })=> (
 const Welcome = () => {
     const {connectWallet, currentAccount,formData, sendTransaction, handleChange} = useContext(TransactionContext);
      
-
-
     const handleSubmit = (e)=>{
       const {addressTo, amount, keyword, message} = formData;
       e.preventDefault();  
@@ -66,7 +65,7 @@ const Welcome = () => {
                             <BsInfoCircle className="icon-info"/>
                         </div>
                         <div>
-                            <p className="address-card">Address</p>
+                            <p className="address-card">{shortenAddress(currentAccount)}</p>
                             <p className="text-card">Etehereum</p>
                         </div>
                     </div>

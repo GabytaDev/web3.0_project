@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
@@ -21,7 +21,7 @@ const Input = ({placeholder, name, type, value, handleChange })=> (
 );
 
 const Welcome = () => {
-    const {connectWallet, currentAccount,formData, sendTransaction, handleChange} = useContext(TransactionContext);
+    const {connectWallet, currentAccount,formData, sendTransaction, handleChange, isLoading} = useContext(TransactionContext);
      
     const handleSubmit = (e)=>{
       const {addressTo, amount, keyword, message} = formData;
@@ -41,6 +41,7 @@ const Welcome = () => {
                    {!currentAccount&&
                     (<button type="button" onClick={connectWallet}
                         className="button-conect-wallet">
+                         <AiFillPlayCircle/>   
                         <p className="text-button-conect">Connect Wallet</p>
                     </button>)}
                     
@@ -77,9 +78,9 @@ const Welcome = () => {
                     <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={handleChange}/>
                     <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange}/>
                     <div className="divider-line"></div>
-                    {false 
-                    ?
-                    <Loader/>
+                    {isLoading ? (
+                    <Loader/>)
+                    
                     : (
                         <button
                           type="button"

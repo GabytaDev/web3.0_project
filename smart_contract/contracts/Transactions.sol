@@ -25,7 +25,7 @@ contract Transactions {
 
     //agregar a la blockchain 
     function addToBlockchain (address payable receiver, uint amount, string memory message, string memory keyword) public {
-      //sumamosuna transaccion y la enviamos al array con el push  
+      //sumamos una transaccion y la enviamos al array con el push  
         transactionCount += 1;
         transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword));
      //para hacer la transferencia emitimos el evento
@@ -43,5 +43,5 @@ contract Transactions {
      //retorna las cuentas de transacciones actualizadas 
      return transactionCount;  
     }
-
+     
 }
